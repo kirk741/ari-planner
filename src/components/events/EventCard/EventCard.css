@@ -1,0 +1,74 @@
+﻿.event-card-link {
+  text-decoration: none;
+  display: block;
+}
+
+.event-card {
+  background: var(--bg-secondary);
+  border-radius: 20px;
+  padding: 20px;
+  border: 1px solid var(--border-light);
+  transition: all 0.3s;
+  margin-bottom: 12px;
+}
+
+.event-card:hover {
+  border-color: var(--pastel-pink);
+  transform: translateY(-2px);
+}
+
+.event-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.event-title {
+  color: var(--text-primary);
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+}
+
+.badge.free {
+  background: rgba(230, 230, 250, 0.15);
+  color: var(--pastel-lavender);
+  border: 1px solid var(--pastel-lavender);
+}
+
+.badge.paid {
+  background: rgba(152, 251, 152, 0.15);
+  color: var(--pastel-mint);
+  border: 1px solid var(--pastel-mint);
+}
+
+.badge.unpaid {
+  background: rgba(255, 182, 193, 0.15);
+  color: var(--pastel-pink);
+  border: 1px solid var(--pastel-pink);
+}
+
+.event-datetime {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.event-datetime span {
+  padding: 4px 12px;
+  background: var(--bg-tertiary);
+  border-radius: 20px;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.event-location {
+  color: var(--text-tertiary);
+  font-size: 0.95rem;
+}

@@ -1,0 +1,39 @@
+# Включаем движок перенаправления
+RewriteEngine On
+
+# Если файл реально существует (и это не index.html) - отдаём его
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteCond %{REQUEST_URI} !\.html$
+RewriteRule . - [L]
+
+# Если папка реально существует - отдаём её
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule . - [L]
+
+# Для service-worker.js - запрещаем перенаправление
+RewriteCond %{REQUEST_URI} ^/service-worker\.js
+RewriteRule . - [L]
+
+# Всё остальное - на index.html
+RewriteRule ^ /index.html [L]
+
+# Правильные MIME-типы
+<IfModule mod_mime.c>
+    AddType application/javascript .js
+    AddType application/json .json
+    AddType text/css .css
+    AddType image/png .png
+    AddType image/x-icon .ico
+</IfModule>
+
+# Запрещаем кэширование service-worker.js
+<Files "service-worker.js">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+</Files>
+
+# Кэширование статики
+<FilesMatch "\.(css|js|json)$">
+    Header set Cache-Control "max-age=31536000, public"
+</FilesMatch>

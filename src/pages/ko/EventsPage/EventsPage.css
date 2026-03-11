@@ -1,0 +1,139 @@
+﻿.events-page {
+  padding: 20px 0;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.events-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.add-event-btn {
+  background: var(--pastel-pink);
+  color: var(--bg-primary);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.add-event-btn:hover {
+  background: var(--pastel-lavender);
+  transform: translateY(-2px);
+}
+
+.search-section {
+  margin-bottom: 20px;
+  position: sticky;
+  top: 70px;
+  background: var(--bg-primary);
+  padding: 10px 0;
+  z-index: 10;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 16px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-light);
+  border-radius: 30px;
+  color: var(--text-primary);
+  font-size: 1rem;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--pastel-pink);
+}
+
+.events-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.loading-state,
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text-tertiary);
+}
+
+.create-first-btn {
+  margin-top: 20px;
+  padding: 12px 24px;
+  background: var(--pastel-pink);
+  border: none;
+  border-radius: 30px;
+  color: var(--bg-primary);
+  cursor: pointer;
+}
+
+.search-bar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.search-input {
+  flex: 1;
+  padding: 12px 16px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-light);
+  border-radius: 30px;
+  color: var(--text-primary);
+  font-size: 1rem;
+}
+
+.filter-toggle {
+  padding: 12px 24px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-light);
+  border-radius: 30px;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.3s;
+  white-space: nowrap;
+}
+
+.filter-toggle:hover,
+.filter-toggle.active {
+  background: var(--pastel-pink);
+  color: var(--bg-primary);
+  border-color: var(--pastel-pink);
+}
+
+.filters-panel {
+  background: var(--bg-secondary);
+  border-radius: 20px;
+  padding: 20px;
+  margin-top: 10px;
+  border: 1px solid var(--border-light);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.filter-group label {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.filter-group select {
+  padding: 10px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  color: var(--text-primary);
+  cursor: pointer;
+}

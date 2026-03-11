@@ -1,0 +1,145 @@
+﻿.header {
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-light);
+  padding: 16px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+  background: rgba(42, 42, 42, 0.95);
+}
+
+.header-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-left, .header-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  min-width: 80px; /* Минимальная ширина для кнопок */
+}
+
+.header-left {
+  justify-content: flex-start;
+}
+
+.header-right {
+  justify-content: flex-end;
+}
+
+.home-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-light);
+  border-radius: 30px;
+  color: var(--pastel-pink);
+  text-decoration: none;
+  transition: all 0.3s;
+  white-space: nowrap;
+}
+
+.home-btn:hover {
+  background: var(--pastel-pink);
+  color: var(--bg-primary);
+  transform: translateX(-4px);
+}
+
+.home-btn svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--text-primary);
+  font-size: 1.3rem;
+  margin: 0 10px;
+  flex-shrink: 0;
+}
+
+.logo-icon {
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.logo-text {
+  background: linear-gradient(135deg, #FFB6C1 0%, #E6E6FA 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.lang-btn {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-light);
+  color: var(--text-primary);
+  padding: 8px 16px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.lang-btn:hover {
+  background: var(--pastel-pink);
+  color: var(--bg-primary);
+  border-color: var(--pastel-pink);
+}
+
+/* Мобильная версия - логотип ВСЕГДА ВИДЕН */
+@media (max-width: 600px) {
+  .home-text {
+    display: none;
+  }
+  
+  /* Логотип всегда виден на мобилках */
+  .logo-text {
+    display: inline-block !important; /* Принудительно показываем */
+    font-size: 1rem; /* Чуть меньше на мобилках */
+  }
+  
+  .logo-icon {
+    font-size: 1.5rem;
+  }
+  
+  .lang-btn {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+  
+  .lang-btn span:last-child {
+    display: none; /* Прячем текст на мобилках, оставляем флаг */
+  }
+}
+
+/* Очень маленькие экраны */
+@media (max-width: 400px) {
+  .logo-text {
+    max-width: 80px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .home-btn {
+    padding: 8px 12px;
+  }
+}
