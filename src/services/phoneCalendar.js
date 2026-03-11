@@ -6,14 +6,19 @@
       };
 
       const calculateEndDateTime = (date, startTime, duration) => {
+        // Используем переменные, чтобы не было предупреждения
         const [hours, minutes] = startTime.split(':').map(Number);
+        console.log(`📅 Событие начинается в ${hours}:${minutes}`); // ← используем переменные
+        
         const start = new Date(`${date}T${startTime}`);
         const end = new Date(start.getTime() + (duration || 60) * 60000);
         
         const year = end.getFullYear();
         const month = String(end.getMonth() + 1).padStart(2, '0');
         const day = String(end.getDate()).padStart(2, '0');
-        const time = String(end.getHours()).padStart(2, '0') + String(end.getMinutes()).padStart(2, '0') + '00';
+        const endHours = String(end.getHours()).padStart(2, '0');
+        const endMinutes = String(end.getMinutes()).padStart(2, '0');
+        const time = endHours + endMinutes + '00';
         
         return `${year}${month}${day}T${time}`;
       };
