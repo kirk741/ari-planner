@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { EventsProvider } from './context/EventsContext';
 import Header from './components/layout/Header/Header';
-import Navigation from './components/layout/Navigation/Navigation';
 
 // Импорт русских страниц
 import HomePageRu from './pages/ru/HomePage/HomePage';
@@ -64,7 +63,6 @@ function App() {
               />
             </Routes>
           </main>
-          <Navigation />
         </div>
       </EventsProvider>
     </BrowserRouter>
